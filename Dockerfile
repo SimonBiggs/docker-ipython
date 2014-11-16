@@ -9,7 +9,9 @@ RUN apt-get update && apt-get -y upgrade
 RUN apt-get -y install python-numpy python3-numpy \
     python-scipy python3-scipy \
     python-matplotlib python3-matplotlib \
-    python-pandas python3-pandas
+    python-pandas python3-pandas \
+    python-sympy \
+    python-nose2 python3-nose2
 
 RUN mkdir /root/notebooks/
 
