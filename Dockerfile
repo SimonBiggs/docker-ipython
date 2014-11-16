@@ -17,6 +17,14 @@ RUN mkdir /root/notebooks/
 
 WORKDIR /root/notebooks/
 
+RUN mkdir ~/github/; \
+    cd ~/github/; \
+    git clone https://github.com/jrjohansson/scientific-python-lectures.git
+    
+RUN cp -r ~/github/scientific-python-lectures ~/notebooks/lectures-learning-python
+    
+RUN ipython3 -c '%install_ext http://raw.github.com/jrjohansson/version_information/master/version_information.py'
+
 EXPOSE 8888
 
 CMD ipython3 notebook --no-browser --ip=0.0.0.0 --port=8888
