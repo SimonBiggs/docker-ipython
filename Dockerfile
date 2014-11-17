@@ -11,8 +11,13 @@ RUN apt-get -y install python-numpy python3-numpy \
     python-matplotlib python3-matplotlib \
     python-pandas python3-pandas \
     python-sympy \
-    python-nose2 python3-nose2
-
+    python-nose2 python3-nose2 \
+    python-mpi4py python3-mpi4py \
+    cython cython3 \
+    python-mako python3-mako
+    
+RUN pip3 install sympy
+    
 RUN mkdir /root/notebooks/
 
 WORKDIR /root/notebooks/
