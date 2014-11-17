@@ -27,12 +27,14 @@ WORKDIR /root/notebooks/
 
 RUN mkdir ~/github/; \
     cd ~/github/; \
-    git clone https://github.com/jrjohansson/scientific-python-lectures.git
+    git clone https://github.com/jrjohansson/scientific-python-lectures.git; \
+    git clone https://gist.github.com/5920182.git
     
-RUN cp -r ~/github/scientific-python-lectures ~/notebooks/lectures-learning-python
+RUN cp -r ~/github/scientific-python-lectures ~/notebooks/lectures-learning-python; \
+    cp ~/github/5920182/Crash\ Course\ v0.5.ipynb.json ~/notebooks/crash-course-in-python.ipynb
     
-RUN ipython3 -c '%install_ext http://raw.github.com/jrjohansson/version_information/master/version_information.py'
+RUN ipython -c '%install_ext http://raw.github.com/jrjohansson/version_information/master/version_information.py'
 
 EXPOSE 8888
 
-CMD ipython3 notebook --no-browser --ip=0.0.0.0 --port=8888
+CMD ipython notebook --no-browser --ip=0.0.0.0 --port=8888
