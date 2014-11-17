@@ -17,6 +17,9 @@ RUN apt-get -y install python-numpy python3-numpy \
     python-mako python3-mako
     
 RUN pip3 install sympy
+
+RUN apt-get -y install \
+    gfortran
     
 RUN mkdir /root/notebooks/
 
